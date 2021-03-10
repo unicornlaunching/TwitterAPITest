@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", (event) => {
     console.log(event)
-    // From here, we will call the Twitter api
+    // From here, we will call the Twitter api q=accountname count=numberoftweets
     let response = httpGet('https://api.twitter.com/1.1/search/tweets.json?q=attractfunding&count=100')
     handleResponse(response)
   })
@@ -40,7 +40,7 @@ url -> | httpGet | --> responseFromServer
 */
 
 function httpGet(urlParameter) {
-  var token = "AAAAAAAAAAAAAAAAAAAAANlCGQEAAAAABIX%2FIGTwzDpRj4iycfnP0oZJXaQ%3Do34R3Y0E1jnlSiFkzA04qHXSMTGVbSeQn4EG7fwZ20IgQsIBSX"
+  var token = "HEYYOUYESYOUINSERTBEARERTOKENFROMTWITTERDEVELOPERCONSOLE"
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", urlParameter, false); // false for a synchronous rquest
   xmlHttp.setRequestHeader('Authorization', 'Bearer ' + token)
